@@ -5,6 +5,7 @@ pragma solidity >=0.6.0 <0.9.0;
 
 contract SimpleStorage {
     //define contract - like class in oop
+
     // this will get initialized to 0
     uint256 number;
 
@@ -17,8 +18,9 @@ contract SimpleStorage {
     People[] public people;
     mapping(string => uint256) public getFavNum;
 
-    function store(uint256 _favNum) public {
+    function store(uint256 _favNum) public returns (uint256) {
         number = _favNum;
+        return _favNum;
     }
 
     function retrieve() public view returns (uint256) {
